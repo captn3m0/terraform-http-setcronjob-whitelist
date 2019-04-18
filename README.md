@@ -11,8 +11,10 @@ This module scrapes the SetCronJob IPs from their website and makes them availab
 # Usage
 
 ```hcl
-module "scj" {
-  source = "github.com/captn3m0/terraform-http-setcronjob-whitelist"
+
+module "setcronjob-whitelist" {
+  source  = "captn3m0/setcronjob-whitelist/http"
+  version = "0.0.1"
 }
 
 resource "aws_security_group_rule" "allow_all_from_scj" {

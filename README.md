@@ -1,6 +1,9 @@
 # terraform-http-setcronjob-whitelist ![](https://img.shields.io/badge/license-MIT-blue.svg)
 
-This module scrapes the SetCronJob IPs from their website and makes them available as a list. Since this module dynamically generates the list, it won't be updated alongside updates to the SetCronJob list updates. SetCronJob used to publish updates to the IPs on a mailing list, but since that isn't active anymore, you can subscribe to an unofficial announce list at https://tinyletter.com/setcronjob-unofficial-ip-updates.
+This module scrapes the SetCronJob IPs from their website and makes them available as a list. Since this module dynamically generates the list, it won't be updated alongside updates to the SetCronJob list updates. You can follow the updates to any IP address changes by the following:
+
+1. Log in to SetCronJob, visit Account > My Profile, click Update profile, and check the box "Receive SetCronJob server IP addresses notifications".
+2. Create an account at [Setcronjob Support](https://setcronjob.zendesk.com/auth/v2/login/registration) and click the follow button [here](https://support.setcronjob.com/hc/en-us/articles/219802207-SetCronJob-IP-addresses-list).
 
 [The SetCronjob service documentation](https://support.setcronjob.com/hc/en-us/articles/219802207-SetCronJob-IP-addresses-list) points to the following text files for IPs that they use:
 
@@ -14,7 +17,7 @@ This module scrapes the SetCronJob IPs from their website and makes them availab
 
 module "setcronjob-whitelist" {
   source  = "captn3m0/setcronjob-whitelist/http"
-  version = "0.0.1"
+  version = "1.0.1"
 }
 
 resource "aws_security_group_rule" "allow_all_from_scj" {

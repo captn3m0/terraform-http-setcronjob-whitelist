@@ -17,7 +17,7 @@ This module scrapes the SetCronJob IPs from their website and makes them availab
 
 module "setcronjob-whitelist" {
   source  = "captn3m0/setcronjob-whitelist/http"
-  version = "1.0.1"
+  version = "1.0.2"
 }
 
 resource "aws_security_group_rule" "allow_all_from_scj" {
